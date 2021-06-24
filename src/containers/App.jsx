@@ -8,7 +8,7 @@ import Footer from "../components/Footer.jsx";
 import '../assets/styles/App.scss'
 
 const App = () => {
-    const [ videos , setVideos ] = useState([]);
+    const [videos,setVideos] = useState([]);
     const API = 'http://localhost:3000/initalState';
 
     useEffect(() => {
@@ -23,19 +23,19 @@ const App = () => {
         <div className="App">
             <Header/>
             <Search/>
-            <Categories title="Mi Lista">
+            {videos.myList?.lenght > 0 && (
+                <Categories title="Mi Lista">
                 <Carousel>
-                    <CarouselItem/>
-                    <CarouselItem/>
-                    <CarouselItem/>
                     <CarouselItem/>
                 </Carousel>
             </Categories>
+            )}
 
             <Categories title="Tendencias">
                 <Carousel>
-                    <CarouselItem/>
-                    <CarouselItem/>
+                    {videos.trends?.map(item => 
+                        <CarouselItem key={item.id} {...item}/>
+                    )}
                 </Carousel>
             </Categories>
 
