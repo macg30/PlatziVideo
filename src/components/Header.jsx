@@ -9,11 +9,6 @@ const Header = () => (
     <Link to="/">
       <img className="header__img" src={logo} alt="Platzi Video"/>
     </Link>
-
-    <a href="/">
-    <img className="header__img" src={logo} alt="Platzi Video"/>
-    </a>
-  
     <div className="header__menu">
       <div className="header__menu--profile">
         <img src={userIcon} alt=""/>
