@@ -1,0 +1,38 @@
+/* Error */
+.error {
+    background: linear-gradient(#21C08B, #AB88FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .error__code {
+    color: white;
+    font-size: 60px;
+    margin: 5px 0px;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+    animation-duration: 1s;
+  }
+  
+  .error__message {
+    color: white;
+    margin: 5px 0px;
+  }
+  
