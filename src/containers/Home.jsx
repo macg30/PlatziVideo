@@ -5,14 +5,15 @@ import Categories from "../components/Categories.jsx";
 import Carousel from "../components/Carousel.jsx";
 import CarouselItem from "../components/CarouselItem.jsx";
 import useInitialState from "../hooks/useInitialState.js";
-
 import '../assets/styles/App.scss'
 
+
 const Home = ({ myList, trends, originals}) => {
+    console.log(myList.lenght);
     return(
         <>
             <Search/>
-            {myList?.lenght > 0 && (
+            {myList?.length > 0 && (
                 <Categories title="Mi Lista">
                 <Carousel>
                     {myList?.map(item => 
@@ -42,10 +43,11 @@ const Home = ({ myList, trends, originals}) => {
 };
 
 const mapStatetoProps = state => {
+    console.log(state.myList);
     return {
         myList: state.myList,
         trends: state.trends,
-        originals: state.original
+        originals: state.originals
     };
 };
 
